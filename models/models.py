@@ -24,11 +24,17 @@ class police(models.Model):
         self.value2 = float(self.value) / 100
 		
 class ribons(models.Model):
+	_inherits='res.product'
 	_name='police.ribons'
 	name=fields.Char('Ribon' ,required=True)
-	starting_date=fields.Date('Starting Date')
-	serial=fields.Float('Priority')
+	alias=fields.char('ribon',required=True)
+	serving_date=fields.Date('Introduced From')
+	service_age=fields.Integer('Service Age')
+	Posting=Fields.Char('Posting')
+	is_medal=fields.Bool('Is a Medal')
+	position_serial=fields.Float('Priority')
 	image= fields.Binary('Image', help='Select image here')
+	medal_image=fields.Binary('Image', help='Select image here')
 	
 class force(models.Model):
 	_name='police.force'
